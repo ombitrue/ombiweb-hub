@@ -105,7 +105,7 @@ const ZC = ["#60A5FA","#34D399","#FBBF24","#F97316","#EF4444","#A855F7","#EC4899
 const CyclingT = {
   en: {
     home:"Home", plan:"Plan", coach:"Coach", analytics:"Analytics", profile:"Profile",
-    goodMorning:"Good morning,", name:"Alex",
+    goodMorning:"Good morning,", name:"Ombi",
     todayWorkout:"Today's Workout", startWorkout:"Start Workout",
     weeklyVol:"Weekly vol.", tss:"TSS", load:"Load",
     recentActivities:"Recent Activities", viewAll:"View all",
@@ -126,13 +126,13 @@ const CyclingT = {
     notes_desc:"Workout reminders & tips", lang_desc:"App display language", priv_desc:"Manage your data",
     askCoach:"Ask your coach…", coachTitle:"AI Coach",
     coachSubtitle:"Powered by The Cyclist's Bible",
-    coachGreeting:"Hey Alex! I've reviewed your training data — you're at TSB +4 (fresh and ready to go hard) with CTL 72. Your FTP is up 10.9% since February. What do you want to work on today?",
+    coachGreeting:"Hey Ombi! I've reviewed your training data — you're at TSB +4 (fresh and ready to go hard) with CTL 72. Your FTP is up 10.9% since February. What do you want to work on today?",
     q1:"Plan my week", q2:"Analyse my performance", q3:"What should I train today?", q4:"Recovery advice",
     garmin:"Garmin Connect", strava:"Strava"
   },
   ua: {
     home:"Головна", plan:"План", coach:"Тренер", analytics:"Аналітика", profile:"Профіль",
-    goodMorning:"Доброго ранку,", name:"Алекс",
+    goodMorning:"Доброго ранку,", name:"Ombi",
     todayWorkout:"Тренування сьогодні", startWorkout:"Почати",
     weeklyVol:"Об'єм тижня", tss:"TSS", load:"Навантаж.",
     recentActivities:"Останні активності", viewAll:"Всі",
@@ -153,7 +153,7 @@ const CyclingT = {
     notes_desc:"Нагадування та поради", lang_desc:"Мова відображення", priv_desc:"Управління даними",
     askCoach:"Задайте питання…", coachTitle:"AI Тренер",
     coachSubtitle:"На основі The Cyclist's Bible",
-    coachGreeting:"Привіт, Алексе! Я переглянув ваші тренувальні дані — TSB +4 (свіжий та готовий до інтенсивних тренувань), CTL 72. Ваш FTP виріс на 10.9% з лютого. Над чим хочете попрацювати?",
+    coachGreeting:"Привіт, Ombi! Я переглянув ваші тренувальні дані — TSB +4 (свіжий та готовий до інтенсивних тренувань), CTL 72. Ваш FTP виріс на 10.9% з лютого. Над чим хочете попрацювати?",
     q1:"Спланувати тиждень", q2:"Аналіз результатів", q3:"Що тренувати сьогодні?", q4:"Поради по відновленню",
     garmin:"Garmin Connect", strava:"Strava"
   }
