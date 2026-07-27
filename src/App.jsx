@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import InstagramAnalyticsModule from "./apps/InstagramAnalytics";
 
 // ── TOKENS (OmbiWeb Cyber-Glass / iOS SpringBoard Grid Aesthetics) ─────────────
 const C = {
@@ -71,6 +72,7 @@ const T = {
 // ── INITIAL APPS DATA ─────────────────────────────────────────────────────────
 const INITIAL_APPS = [
   { id: "cycling", name: "AI Cycling", desc: "Structured training", v: "v2.4", stats: "CTL 72 · TSB +4" },
+  { id: "instagram", name: "Instagram Analytics", desc: "Audience & ER monitor", v: "v1.0", stats: "3 active profiles" },
   { id: "tasks", name: "Neural Tasks", desc: "AI workflow", v: "v1.1", stats: "12 pending tasks" },
   { id: "crypto", name: "Vault Alpha", desc: "Asset monitor", v: "v3.0", stats: "+14.2% APY" },
   { id: "notes", name: "Secure Sync", desc: "Knowledge base", v: "v1.0", stats: "Encrypted vault" },
@@ -88,6 +90,7 @@ const Toggle = ({ on, flip }) => (
 // Futuristic SVG Icons
 const Icons = {
   cycling: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><circle cx="5.5" cy="18.5" r="3.5"/><circle cx="18.5" cy="18.5" r="3.5"/><path d="M12 19V6.4a2 2 0 0 0-2-2H6m6 5l4-4m0 0h3m-3 0v3"/></svg>,
+  instagram: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>,
   tasks: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9l2 2 4-4"/></svg>,
   crypto: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
   notes: <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>,
@@ -341,6 +344,9 @@ const CyclingAppModule = ({ onBack, lang: externalLang }) => {
 const AppRunnerScreen = ({ app, onBack, t, lang }) => {
   if (app.id === "cycling") {
     return <CyclingAppModule onBack={onBack} lang={lang} />;
+  }
+  if (app.id === "instagram") {
+    return <InstagramAnalyticsModule onBack={onBack} lang={lang} />;
   }
 
   return (
@@ -648,7 +654,7 @@ export default function App() {
             <AppRunnerScreen app={activeApp} onBack={() => setActiveApp(null)} t={t} lang={lang} />
           ) : (
             <>
-              {tab === "hub" && <HubScreen apps={apps} onLaunch={app => setActiveApp(app)} lang={lang} setLang={setLang} t={t} onAddApp={handleAddApp} onDeleteApp={handleDeleteApp} />}
+              {tab === "hub" && <HubScreen apps={apps} onLaunch={app => setActiveApp(app)} lang={lang} setLang={setLang} t={t} onAddApp={handleAddApp} onDeleteApp={deleteApp => handleDeleteApp(deleteApp)} />}
               {tab === "analytics" && <AnalyticsScreen t={t} />}
               {tab === "settings" && <SettingsScreen t={t} />}
             </>
